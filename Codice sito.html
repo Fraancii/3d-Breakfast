@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Computer Animation Report</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
+<style>
+body,h1,h2,h3,h4,h5 {font-family: "Poppins", sans-serif}
+body {font-size:16px;}
+.w3-half img{margin-bottom:-6px;margin-top:16px;opacity:0.8;cursor:pointer}
+.w3-half img:hover{opacity:1}
+.w3-third img{margin-bottom:-3px;margin-top:8px;opacity:0.8;cursor:pointer}
+.w3-third img:hover{opacity:1}
+</style>
+<body>
+
+<!-- Sidebar/menu -->
+<nav class="w3-sidebar w3-collapse w3-top w3-large w3-padding" style="z-index:3;width:300px;font-weight:bold;background-color:#CFE9EA" id="mySidebar"><br>
+  <a href="javascript:void(0)" onclick="w3_close()" class="w3-button w3-hide-large w3-display-topleft" style="width:100%;font-size:22px">Close Menu</a>
+  <div class="w3-container">
+    <h3 class="w3-padding-64"><b>Break-fast</b></h3>
+  </div>
+  <div class="w3-bar-block">
+    <a href="#" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Home</a>
+    <a href="#progetto" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Il progetto</a>
+    <a href="#reference" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Reference</a>
+    <a href="#modellazione" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Modellazione</a>
+    <a href="#animazione" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Animazione</a>
+    <a href="#postproduzione" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Post produzione</a>
+    <a href="#conclusioni" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Conclusioni</a>
+    <a href="#crediti" onclick="w3_close()" class="w3-bar-item w3-button w3-hover-white">Crediti</a>
+  </div>
+</nav>
+
+<!-- Top menu on small screens -->
+<header class="w3-container w3-top w3-hide-large w3-xlarge w3-padding" style="color:#CFE9EA">
+  <a href="javascript:void(0)" class="w3-button w3-margin-right" style="color:#CFE9EA" onclick="w3_open()">☰</a>
+  <span>Break-fast</span>
+</header>
+
+<!-- Overlay effect when opening sidebar on small screens -->
+<div class="w3-overlay w3-hide-large" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+<!-- !PAGE CONTENT! -->
+<div class="w3-main" style="margin-left:340px;margin-right:40px">
+
+  <!-- Header -->
+  <div class="w3-container" style="margin-top:80px" id="showcase">
+    <h1 class="w3-jumbo"><b>Break-fast</b></h1>
+
+    <!-- Il progetto -->
+  <div class="w3-container" id="progetto" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Il progetto</b></h1>
+    <hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+    <p><b>Descrizione del progetto</b></p>
+    <p>Progetto realizzato nell'ambito del Corso di Computer Animation, tenuto dai proff.
+      Miglio Edie e Cattoglio Francesco; lo scopo del progetto era quello di creare un'animazione
+      con un software di grafica 3D, nel nostro caso Blender, che comprendesse l'uso di fluidi per
+      simulare delle sostanze dolci.</p>
+
+    <p><b>Soggetto</b></p>
+    <p>L'animazione è ambientata in un'innovativa sala da pranzo automatizzata, all'interno della
+      quale viene servita la colazione tramite un rullo trasportatore; I dolci che si trovano su
+      quest'ultimo vengono guarniti con diversi tipi di glasse, cioccolato e marmellata, terminandone la preparazione.
+    Nella stanza è inoltre presente un ricco buffet al tavolo, sul quale campeggia una grande fontana di cioccolato funzionante.</p>
+    <p>Il titolo dell'animazione, <b>"Break-fast",</b> fa riferimento alla velocità dei robot che assemblano le varie
+      pietanze, oltre che ad essere un gioco di parole con un chiaro riferimento alla parola inglese "Breakfast", ovvero colazione.</p>
+
+
+  </div>
+
+  <!-- Photo grid (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="./img/disegni/Bozzetto.png" style="width:100%" onclick="onClick(this)" alt="Concept finale">
+      <img src="./img/disegni/Storyboard_1.png" style="width:100%" onclick="onClick(this)" alt="Storyboard 1">
+
+    </div>
+
+    <div class="w3-half">
+      <img src="./img/render/stanza.png" style="width:100%" onclick="onClick(this)" alt="Render finale della stanza">
+      <img src="./img/disegni/Storyboard_2.png" style="width:100%" onclick="onClick(this)" alt="Storyboard 2">
+
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Reference -->
+  <div class="w3-container" id="reference" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Visual references</b></h1>
+    <hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+    <p><b>Ispirazioni visive</b></p>
+    <p>L'estetica del progetto si ispira alle cucine e ai diner americani degli anni '50,
+      con "elettrodomestici" e arredi color pastello, con un pavimento a scacchi bianchi e neri.
+    I dolci sono quelli tipici della cultura americana, come pancakes, donuts e cupcakes, con qualche
+    elemento di contaminazione europea, quali macaron ed eclair, di provenienza francese.
+    </p>
+  </div>
+
+  <!-- single photo -->
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="./img/disegni/Moodboard.png" style="width:203%" onclick="onClick(this)" alt="Moodboard di riferimento per colori, stile e arredi">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Modellazione -->
+  <div class="w3-container" id="modellazione" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Modellazione</b></h1>
+    <hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+    <p><b>Dolci colorati in un ambiente robotico</b></p>
+    <p>Gli elementi che vanno a comporre la scena sono stati realizzati tramite modellazione poligonale.
+    I dolci hanno un aspetto realistico, ottenuto sia grazie all'uso di displacement map che della tecnica
+    dello sculpting, per ottenere i dettagli e le irregolarità tipiche delle superfici dei cibi e dei materiali organici.
+    Al contrario gli elementi d'arredo sono caratterizzati da superfici lucide, metalliche e regolari, dai delicati colori
+    pastello e accenti neri, in forte contrasto.
+    Le forme sono prettamente curve, anche i robot da cucina sono formati da linee morbide.
+    <p><b>I modelli</b>:</p>
+  </div>
+  <!-- Photo grid 2 (modal) -->
+  <div class="w3-row-padding">
+    <div class="w3-third">
+      <img src="./img/disegni/Macchina_1.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Macchina della marmellata; l'estrusore ha un movimento verticale">
+      <img src="./img/render/Biscotti.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Biscotti di pastafrolla">
+      <img src="./img/render/Waffle.png" style="width:100%" onclick="onClick(this)" alt="Waffles con sciroppo d'acero">
+    </div>
+
+    <div class="w3-third">
+      <img src="./img/disegni/Macchina_2.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Macchina del cioccolato; l'estrusore compie movimenti sia sull'asse verticale che su quello orizzontale">
+      <img src="./img/render/Cioccolatini.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Contenitore di vetro zigrinato con all'interno cioccolatini sferici">
+      <img src="./img/render/Fontana.png" style="width:100%" onclick="onClick(this)" alt="Fontana di cioccolato">
+    </div>
+
+    <div class="w3-third">
+      <img src="./img/disegni/Macchina_3.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Robot a due bracci per glassa e granella; il movimento principale della macchina è quello rotatorio, su tre diversi assi">
+      <img src="./img/render/Ciambella.png" style="width:100%" class="w3-margin-bottom" onclick="onClick(this)" alt="Ciambella con glassa e granella">
+      <img src="./img/render/Pancakes.png" style="width:100%" onclick="onClick(this)" alt="Pancakes e mirtilli">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- Animazione -->
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Animazione</b></h1>
+    <hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+    <p><b>Simulazione fluidi</b></p>
+    <p>I fluidi sono i veri protagonisti dell'animazione. Ogni fluido è stato simulato in modo da
+      ricreare in maniera realistica una guarnizione diversa: cioccolato, glassa, marmellata, andando a
+      lavorare sul parametro della densità. I materiali, inoltre, vanno a completare visivamente il
+      rendimento del fluido e il suo comportamento rispetto alla luce.
+    </p>
+    <p>Nel caso del waffle che si trova sul primo tavolo, ricoperto di sciroppo d'acero "statico",
+      avevamo bisogno che la mesh dello sciroppo aderisse perfettamente a quella del waffle, proprio
+      come quando un liquido si posa su un oggetto; per ottenere questo risultato abbiamo quindi simulato
+      il fluido, per poi convertirlo in mesh statica e applicargli il materiale corretto.
+    </p>
+  </div>
+
+  <video width="400" class="w3-margin-left" controls>
+    <source src="img/video/Fluidi1.mp4" type="video/mp4">
+    <source src="Fluidi1.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+  <video width="400" class="w3-margin-left" controls>
+    <source src="img/video/Fluidi2.mp4" type="video/mp4">
+    <source src="Fluidi2.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Sistemi particellari</b></p>
+    <p><b>Emission</b> - Per creare l'effetto della granella in movimento che cade e
+      si posa sulla ciambella è stato utilizzato un sistema particellare di tipo "emission"
+      applicando una rotazione in caduta per dare
+    più realismo al movimento.</p>
+    <p><b>Hair</b> - La granella statica, applicata ai donut del buffet, è stata
+      realizzata con un sistema particellare di tipo "hair" sulla glassa,
+      con particelle di forma cilindrica di varie dimensioni.</p>
+  </div>
+  <video width="400" class="w3-margin-left" controls>
+    <source src="img/video/Particellari.mp4" type="video/mp4">
+    <source src="Particellari.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+
+  </video>
+  <video width="400" class="w3-margin-left" controls>
+    <source src="img/video/Particellari2.mp4" type="video/mp4">
+    <source src="Particellari2.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Fontana di cioccolato</b></p>
+    <p>La fontana di cioccolato è stata azionata tramite una simulazione fluidi
+      composta oltre dal dominio, flusso e effettore, anche da un flusso negativo, "Outflow", posto alla base
+    della fontana stessa, che "assorbe" e rimuove il fluido dalla scena, evitando così che il cioccolato
+  trabocchi. La fontana viene poi "spenta", interrompendo il flusso di cioccolato, durante l'ultima inquadratura totale sulla
+camera. </p>
+  </div>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Nastro trasportatore</b></p>
+    <p>Il rullo trasportatore stile "sushi", nonostante si muova per due volte in tutta la durata dell'animazione,
+    in realtà compie un solo movimento, ripetuto per dare un'illusione di continuità.</p>
+  </div>
+
+  <video width="400" class="w3-margin-left" controls>
+    <source src="img/video/Rullo.mp4" type="video/mp4">
+    <source src="Rullo.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+  </video>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Cioccolatini</b></p>
+    <p>Sul tavolo del buffet sono presenti due barattoli con all'interno dei cioccolatini
+      di vari tipi di cioccolato; per far sì che le sfere fossero disposte in modo fisicamente
+    realistico, è stata utilizzata una simulazione fisica, di tipo "rigid bodies".
+  I cioccolatini, di forma sferica, sono stati creati a partire da una singola mesh,
+moltiplicata in seguito con il modificatore "array"; infine, attivando la simulazione, sono stati fatti
+cadere all'interno del barattolo dove, scontrandosi sia tra di loro che con il contenitore, si sono infine assestati
+e disposti in maniera corretta.</p>
+  </div>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Movimenti dei macchinari</b></p>
+    <p>I robot che guarniscono i dolci compiono movimenti semplici, traslazioni
+      sugli assi x e y oppure rotazioni, ma risultano molto efficaci per svolgere
+      il lavoro all'interno dell'animazione.</p>
+  </div>
+
+  <div class="w3-container" id="animazione" style="margin-top:75px">
+    <p><b>Movimento camera</b></p>
+    <p>La camera segue i dolci nel corso della loro preparazione sul rullo, per
+      poi soffermarsi sul primo tavolo; grazie ad uno zoom sulla cioccolata calda
+    si passa alla fontana di cioccolato, che porta ad una carrellata sul buffet.
+  La scena si conclude con una visione dall'alto dell'intera stanza, coperta infine da una colata di glassa.</p>
+  </div>
+
+  <div class="w3-row-padding">
+    <div class="w3-half">
+      <img src="./img/disegni/Camera.png" style="width:200%" onclick="onClick(this)" alt="Movimenti della camera durante le due scene">
+    </div>
+  </div>
+
+  <!-- Modal for full size images on click-->
+  <div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+    <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+    <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+      <img id="img01" class="w3-image">
+      <p id="caption"></p>
+    </div>
+  </div>
+
+  <!-- postproduzione -->
+<div class="w3-container" id="postproduzione" style="margin-top:75px">
+  <h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Post produzione</b></h1>
+  <hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+  <p><b>Musica</b></p>
+  <p>La musica che accompagna l'animazione è la versione strumentale dell'opening del secondo episodio
+    della serie Marvel "WandaVision"; la scelta è ricaduta su questo brano poichè l'episodio della serie
+    da cui è tratto è ambientato a cavallo tra gli anni '50 e '60, risultando così coerente con il tema e con
+l'atmosfera giocosa del video.</p>
+
+</div>
+
+<!-- Photo grid (modal) -->
+<div class="w3-row-padding">
+  <div class="w3-half">
+    <img src="./img/altro/Musica.png" style="width:100%" onclick="onClick(this)" alt="Sigla di apertura del secondo episodio della serie tv Marvel - WandaVision">
+  </div>
+
+  <div class="w3-half">
+    <img src="./img/altro/Wandavision.png" style="width:100%" onclick="onClick(this)" alt="Un frame della serie tv da cui è tratta la musica">
+  </div>
+</div>
+
+<!-- Modal for full size images on click-->
+<div id="modal01" class="w3-modal w3-black" style="padding-top:0" onclick="this.style.display='none'">
+  <span class="w3-button w3-black w3-xxlarge w3-display-topright">×</span>
+  <div class="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+    <img id="img01" class="w3-image">
+    <p id="caption"></p>
+  </div>
+</div>
+
+<div class="w3-container" id="postproduzione" style="margin-top:75px">
+  <p><b>Transizioni e titoli</b></p>
+  <p>Il video inizia con l'apparizione del titolo, un lettering disegnato a mano ispirato alle serie tv
+    degli anni '50. Il fil rouge dell'intera animazione, ovvero l'uso dei fluidi, è
+  presente anche come elemento di transizione sia per l'apparizione dei titoli di testa e coda, sotto forma di glassa,
+  che per il passaggio dalla prima scena sul tavolo dei robot alla seconda scena, ambientata
+  sul tavolo del buffet; in questo caso è il cioccolato fuso a fare da trait d'union tra le due scene.</p>
+</div>
+
+<!-- conclusioni -->
+<div class="w3-container" id="conclusioni" style="margin-top:75px">
+<h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Conclusioni</b></h1>
+<hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+<p><b>Considerazioni finali</b></p>
+<p>Il progetto, durante la sua realizzazione, si è evoluto molto, soprattutto per quanto riguarda il percorso del nastro trasportatore, studiato per adattarsi al meglio
+al resto dell'ambientazione e per essere funzionale all'animazione.</p>
+<p>La vera sfida all'interno del processo di animazione è stata la simulazione dei fluidi; rendere la consistenza di un fluido, che fosse una glassa,
+della marmellata o una bevanda, non è stato affatto semplice. A questa difficoltà si aggiunge il lungo tempo necessario al computer per elaborare i dati delle simulazioni.</p>
+<p>Una fase molto interessante della realizzazione del progetto è stata quella della modellazione dei dolci: cercare di ricreare
+le superfici dei cibi, prettamente irregolari, è stata una sfida molto stimolante.
+L'utilizzo della modalità "sculpting" ci è stata molto utile proprio per riprodurre le irregolarità delle suddette superfici e inoltre ci ha permesso
+di apprendere una nuova tecnica.</p>
+</div>
+
+<!-- crediti -->
+<div class="w3-container" id="Crediti" style="margin-top:75px">
+<h1 class="w3-xxxlarge w3-text" style="color:#CFE9EA"><b>Crediti</b></h1>
+<hr style="width:50px;border:5px solid #CFE9EA" class="w3-round">
+
+<p><b>Tutorial consultati durante la realizzazione del progetto</b></p>
+<p><a href="https://www.youtube.com/watch?v=hZVlN922W28">Barattolo dei cioccolatini</a></p>
+<p><a href="https://www.youtube.com/watch?v=Im1AY0pN3qU">Fontana</a></p>
+<p><a href="https://www.youtube.com/watch?v=TPrnSACiTJ4">Donut</a></p>
+<p><a href="https://www.youtube.com/watch?v=0koL5NGBaA0">Ispirazione per la transizione finale</a></p>
+<p><a href="https://www.youtube.com/watch?v=eblIa_o_v2I">Viscosità</a></p>
+<p><a href="https://www.youtube.com/watch?v=jv3bouZvY0A">Mirtilli</a></p>
+
+<p><b>Modelli 3D</b></p>
+<p><a href="https://grabcad.com/library/kaiten-sushi-conveyor-chain-1">Sushi conveyor belt</a></p>
+<p><a href="https://grabcad.com/library/kursi-sandar-chair-1">Sgabelli</a></p>
+<p><a href="https://grabcad.com/library/napkin-holder-13">Ispirazione per i portatovaglioli</a></p>
+
+<p><b>Musica</b></p>
+<p><a href="https://www.youtube.com/watch?v=_SUu4rJ9sAA">WandaVision Episode 2 Intro [INSTRUMENTAL]</a></p>
+
+<p><b>Texture</b></p>
+<p><a href="https://cgmood.com/">Piastrelle del pavimento</a></p>
+<p>Google Images</p>
+</div>
+
+<!-- End page content -->
+</div>
+
+<!-- crediti -->
+<div class="w3-light-grey w3-container w3-padding-32" id="crediti"style="margin-top:75px;padding-right:58px">
+  <p class="w3-right w3-right-align	"><b>Progetto realizzato da Arianna Tarzia e Francesca Vita<br>Politecnico di Milano A.A. 2021/22<br>Computer Animation</b></p>
+</div>
+
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+  document.getElementById("myOverlay").style.display = "none";
+}
+
+// Modal Image Gallery
+function onClick(element) {
+  document.getElementById("img01").src = element.src;
+  document.getElementById("modal01").style.display = "block";
+  var captionText = document.getElementById("caption");
+  captionText.innerHTML = element.alt;
+}
+</script>
+
+</body>
+</html>
